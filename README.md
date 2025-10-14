@@ -70,16 +70,25 @@ It’s designed to be scalable, secure, and easy to deploy.
 
 ## 📸 Screenshots
 # User Images:
+# Homepage
 ![Homepage](client/src/assets/ss/HomePage.png)
+# Collection page
 ![Collection Page](client/src/assets/ss/CollectionPage.png)
+# Add to Cart
 ![Add to Cart](client/src/assets/ss/AddToCart.png)
+# Cart
 ![Cart](client/src/assets/ss/CartPage.png)
+# Check Out
 ![Check Out](client/src/assets/ss/CheckOutPage.png)
+# Orders
 ![Orders](client/src/assets/ss/OrderPage.png)
 
 # Admin Images:
+# Add items
 ![Add items](admin/src/assets/ss/addItem.png)
+# Products
 ![Products](admin/src/assets/ss/ListItem.png)
+# Admin orders
 ![Orders](admin/src/assets/ss/Orders.png)
 
 
