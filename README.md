@@ -70,17 +70,17 @@ It’s designed to be scalable, secure, and easy to deploy.
 
 ## 📸 Screenshots
 # User Images:
-[Homepage](client/src/assets/ss/HomePage.png)
-[Collection Page](client/src/assets/ss/CollectionPage.png)
-[Add to Cart](client/src/assets/ss/AddToCart.png)
-[Cart](client/src/assets/ss/CartPage.png)
-[Check Out](client/src/assets/ss/CheckOutPage.png)
-[Orders](client/src/assets/ss/OrderPage.png)
+![Homepage](client/src/assets/ss/HomePage.png)
+![Collection Page](client/src/assets/ss/CollectionPage.png)
+![Add to Cart](client/src/assets/ss/AddToCart.png)
+![Cart](client/src/assets/ss/CartPage.png)
+![Check Out](client/src/assets/ss/CheckOutPage.png)
+![Orders](client/src/assets/ss/OrderPage.png)
 
 # Admin Images:
-[Add items](admin/src/assets/ss/addItem.png)
-[Products](admin/src/assets/ss/ListItem.png)
-[Orders](admin/src/assets/ss/Orders.png)
+![Add items](admin/src/assets/ss/addItem.png)
+![Products](admin/src/assets/ss/ListItem.png)
+![Orders](admin/src/assets/ss/Orders.png)
 
 
 ---
