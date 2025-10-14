@@ -118,13 +118,21 @@ npm run dev
 ```
 # Backend env file:
 PORT=8000
+
 MONGO_URL=your_mongodb_connection_string
+
 CLOUDINARY_API_KEY=your_cloudinary_api_key
+
 CLOUDINARY_SECRET_KEY=your_cloudinary_secret
+
 CLOUDINARY_NAME=your_cloudinary_name
+
 JWT_SECRET=your_jwt_secret
+
 ADMIN_EMAIL=your_admin_email
+
 ADMIN_PASS=your_admin_password
+
 STRIPE_SECRET_KEY=your_stripe_secret_key
 
 # Frontend env file:
