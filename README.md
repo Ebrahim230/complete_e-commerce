@@ -94,7 +94,7 @@ It’s designed to be scalable, secure, and easy to deploy.
 ![Orders](admin/src/assets/ss/Admin_orders.png)
 ---
 # Live frontend:
-[** Go to Live Frontend **](https://e-commerce-frontend-kappa-ten.vercel.app/login)
+[Go to Live Frontend](https://e-commerce-frontend-kappa-ten.vercel.app/login)
 ## ⚙️ Installation & Setup
 
 ### 🔧 Prerequisites
