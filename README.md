@@ -70,17 +70,26 @@ It’s designed to be scalable, secure, and easy to deploy.
 
 ## 📸 Screenshots
 # User Images:
-[Homepage](client/src/assets/ss/HomePage.png)
-[Collection Page](client/src/assets/ss/CollectionPage.png)
-[Add to Cart](client/src/assets/ss/AddToCart.png)
-[Cart](client/src/assets/ss/CartPage.png)
-[Check Out](client/src/assets/ss/CheckOutPage.png)
-[Orders](client/src/assets/ss/OrderPage.png)
+# Homepage
+![Homepage](client/src/assets/ss/HomePage.png)
+# Collection page
+![Collection Page](client/src/assets/ss/CollectionPage.png)
+# Add to Cart
+![Add to Cart](client/src/assets/ss/AddToCart.png)
+# Cart
+![Cart](client/src/assets/ss/CartPage.png)
+# Check Out
+![Check Out](client/src/assets/ss/CheckOutPage.png)
+# Orders
+![Orders](client/src/assets/ss/OrderPage.png)
 
 # Admin Images:
-[Add items](admin/src/assets/ss/addItem.png)
-[Products](admin/src/assets/ss/ListItem.png)
-[Orders](admin/src/assets/ss/Orders.png)
+# Add items
+![Add items](admin/src/assets/ss/addItem.png)
+# Products
+![Products](admin/src/assets/ss/ListItem.png)
+# Admin orders
+![Orders](admin/src/assets/ss/Orders.png)
 
 
 ---
@@ -118,13 +127,21 @@ npm run dev
 ```
 # Backend env file:
 PORT=8000
+
 MONGO_URL=your_mongodb_connection_string
+
 CLOUDINARY_API_KEY=your_cloudinary_api_key
+
 CLOUDINARY_SECRET_KEY=your_cloudinary_secret
+
 CLOUDINARY_NAME=your_cloudinary_name
+
 JWT_SECRET=your_jwt_secret
+
 ADMIN_EMAIL=your_admin_email
+
 ADMIN_PASS=your_admin_password
+
 STRIPE_SECRET_KEY=your_stripe_secret_key
 
 # Frontend env file:
