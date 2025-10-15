@@ -1,5 +1,5 @@
 const express = require('express');
-const { allOrders, updateStatus, placeOrder, placeOrderStripe, userOrders } = require('../controllers/orderController');
+const { allOrders, updateStatus, placeOrder, placeOrderStripe, userOrders, verifyStripe, cancelOrder } = require('../controllers/orderController');
 const adminAuth = require('../middlewares/adminAuth');
 const userAuth = require('../middlewares/authMiddleware');
 const router = express.Router();
@@ -14,5 +14,11 @@ router.post('/stripe',userAuth,placeOrderStripe);
 
 //User features:
 router.post('/userorders',userAuth,userOrders);
+
+//verify payment:
+router.post('/verifyStripe',userAuth, verifyStripe);
+
+//Cancel order:
+router.post('/cancel',userAuth,cancelOrder);
 
 module.exports = router;

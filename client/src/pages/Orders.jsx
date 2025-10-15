@@ -5,19 +5,20 @@ import axios from "axios"
 import { toast } from "react-toastify"
 
 const Orders = () => {
-  const { serverUrl, token, currency } = useContext(ShopContext)
+  const { serverUrl, token, currency, userId } = useContext(ShopContext)
   const [orderData, setOrderData] = useState([])
   const [statusMap, setStatusMap] = useState({})
 
   const loadOrderData = async () => {
     try {
       if (!token) return
-      const res = await axios.post(serverUrl + "/api/order/userorders", {}, { headers: { token } })
+      const res = await axios.post(`${serverUrl}/api/order/userorders`, { userId }, { headers: { token } })
       if (res.data.success) {
         let allOrderItem = []
         res.data.orders.forEach(order => {
           order.items.forEach(item => {
-            item.status = order.status
+            item.orderId = order._id
+            item.status = order.status?.trim()
             item.payment = order.payment
             item.paymentMethod = order.paymentMethod
             item.date = order.date
@@ -35,7 +36,20 @@ const Orders = () => {
     }
   }
 
-  const trackOrder = async (index) => {
+  const cancelOrder = async (orderId, idx, status) => {
+    if (!status || status.toLowerCase() !== "order placed") return toast.error("Cannot cancel this order")
+    try {
+      const res = await axios.post(`${serverUrl}/api/order/cancel`, { orderId, userId, role: "user" }, { headers: { token } })
+      if (res.data.success) {
+        setStatusMap(prev => ({ ...prev, [idx]: "Cancelled" }))
+        toast.success(res.data.message)
+      } else toast.error(res.data.message)
+    } catch (err) {
+      toast.error(err.message)
+    }
+  }
+
+  const trackOrder = async (idx) => {
     try {
       if (!token) return
       await loadOrderData()
@@ -45,9 +59,7 @@ const Orders = () => {
     }
   }
 
-  useEffect(() => {
-    loadOrderData()
-  }, [token])
+  useEffect(() => { loadOrderData() }, [token])
 
   return (
     <div className="border-t pt-16">
@@ -70,12 +82,17 @@ const Orders = () => {
                 <p className="mt-1">Payment: <span className="text-gray-400">{item.paymentMethod}</span></p>
               </div>
             </div>
-            <div className="md:w-1/2 flex justify-between">
+            <div className="md:w-1/2 flex justify-between items-center gap-2">
               <div className="flex items-center gap-2">
                 <p className="min-w-2 h-2 rounded-full bg-green-500"></p>
                 <p className="text-sm md:text-base">{statusMap[idx]}</p>
               </div>
-              <button onClick={() => trackOrder(idx)} className="border px-4 py-2 text-sm font-medium rounded-sm cursor-pointer">Track Order</button>
+              <div className="flex gap-2">
+                <button onClick={() => trackOrder(idx)} className="border px-4 py-2 text-sm font-medium rounded-sm cursor-pointer">Track Order</button>
+                {statusMap[idx]?.toLowerCase() === "order placed" &&
+                  <button onClick={() => cancelOrder(item.orderId, idx, statusMap[idx])} className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 text-sm">Cancel</button>
+                }
+              </div>
             </div>
           </div>
         ))}

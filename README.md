@@ -82,6 +82,8 @@ It’s designed to be scalable, secure, and easy to deploy.
 ![Check Out](client/src/assets/ss/CheckOutPage.png)
 # Orders
 ![Orders](client/src/assets/ss/OrderPage.png)
+# Stripe payment:
+![stripe payment](client/src/assets/ss/stripe_payment.png)
 
 # Admin Images:
 # Add items
@@ -89,7 +91,7 @@ It’s designed to be scalable, secure, and easy to deploy.
 # Products
 ![Products](admin/src/assets/ss/ListItem.png)
 # Admin orders
-![Orders](admin/src/assets/ss/Orders.png)
+![Orders](admin/src/assets/ss/Admin_orders.png)
 
 
 ---
