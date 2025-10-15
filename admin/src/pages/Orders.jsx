@@ -54,7 +54,7 @@ const Orders = ({ token, userId }) => {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {orders.map((order, i) => (
             <div key={i} className="border border-gray-200 rounded-2xl shadow-md bg-white p-6 flex flex-col justify-between">
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center justify-between mb-2">
                 <h4 className="text-lg font-semibold text-gray-800">Order #{i + 1}</h4>
                 <select value={order.status} onChange={(e) => updateStatus(order._id, e.target.value)} className="text-sm border rounded px-2 py-1 bg-gray-50">
                   <option value="Order Placed">Order Placed</option>
@@ -64,6 +64,7 @@ const Orders = ({ token, userId }) => {
                   <option value="Cancelled">Cancelled</option>
                 </select>
               </div>
+              <p className="text-gray-500 mt-1 text-sm">Date: {new Date(order.date).toLocaleString("en-US", { month: "short", day: "numeric", year: "numeric", hour: "2-digit", minute: "2-digit" })}</p>
               <div className="text-sm text-gray-700 space-y-1 mb-3">
                 {order.items.map((item, idx) => <p key={idx}>{item.name} × {item.quantity} [{item.size}]</p>)}
               </div>
