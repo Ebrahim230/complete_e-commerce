@@ -72,6 +72,7 @@ const Orders = ({ token, userId }) => {
                 <p>{order.address.street}</p>
                 <p>{order.address.city}, {order.address.state}, {order.address.country} {order.address.zipcode}</p>
                 <p className="text-gray-500 mt-1">📞 {order.address.phone}</p>
+                <p className="text-gray-500 mt-1">Payment: {order.paymentMethod}</p>
               </div>
               <div className="flex justify-between items-end border-t border-gray-100 pt-3 mt-4 text-sm">
                 <p className="text-gray-800 font-semibold">Total: {currency}{order.amount?.toFixed(2)}</p>
