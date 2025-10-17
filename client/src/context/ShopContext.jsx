@@ -27,6 +27,8 @@ const ShopContextProvider = (props) => {
     }
   };
 
+  const userId = token?decodeToken(token).id:null;
+
   const logoutUser = () => {
     setToken("");
     localStorage.removeItem("token");
@@ -187,6 +189,7 @@ const ShopContextProvider = (props) => {
     token,
     setToken,
     countdown,
+    userId
   };
 
   return <ShopContext.Provider value={value}>{props.children}</ShopContext.Provider>;
